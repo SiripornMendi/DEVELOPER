@@ -1,0 +1,9 @@
+DmlDemo.dmlInsertDemo_StndObj1();
+DmlDemo.dmlInsertDemo_StndObj2();
+DmlDemo.dmlUpdateDemo_1();
+DmlDemo.dmlUpdateDemo_2();
+DmlDemo.dmlInsertDemo2();
+DmlDemo.dmlInsertDemo3();
+DmlDemo.dmlMultipleRecordInsert_right1();
+DmlDemo.dmlMultipleRecordInsert_right2();
+DmlDemo.dmlMultipleRecordInsert_right3();
