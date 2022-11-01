@@ -1,5 +1,11 @@
 trigger AccountTrigger on Account (before insert, before update, after insert, after update) {
-    
+    //check if switch is on or off for account object
+    TriggerSwitch__c accountSwitch = TriggerSwitch__c.getInstance('account');
+    if (accountSwitch.switch__c == false) {
+        return;
+    }
+
+    System.debug('==== trigger start ====');
     if (trigger.isBefore) {
         AccountTriggerHandler.updateDescription(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.OldMap);
     }
@@ -13,6 +19,7 @@ trigger AccountTrigger on Account (before insert, before update, after insert, a
     if (Trigger.isAfter && Trigger.isUpdate) {
         AccountTriggerHandler.updateVIPforAllContacts(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.OldMap);
     }
+    System.debug('==== trigger end ====');
     
 }
 
